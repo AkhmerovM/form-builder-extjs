@@ -1,0 +1,1 @@
+{"version":3,"sources":["webpack:///style.less"],"names":[],"mappings":"AAAA,EACE,QAAS,CACT,SAAU,CACV,qBACF,CACA,gBAGE,WAAY,CACZ,UACF,C","file":"main.min.css","sourcesContent":["* {\n  margin: 0;\n  padding: 0;\n  box-sizing: border-box;\n}\nhtml,\nbody,\n#root {\n  height: 100%;\n  width: 100%;\n}\n"],"sourceRoot":""}

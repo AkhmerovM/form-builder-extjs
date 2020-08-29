@@ -1,7 +1,7 @@
 import React from 'react';
 import ExtReactDOM from '@sencha/ext-react-modern';
 import { App } from './App';
-import './style.less';
+import './style/index.less';
 
 const root = document.getElementById('root');
 

@@ -1,11 +1,9 @@
 // @flow
 import React from 'react';
-import { ExtButton } from '@sencha/ext-react-modern';
+import { MainForm } from 'modules/form-builder/components/MainForm';
 
 export function App() {
     return (
-        <div className="main">
-            <ExtButton text="My Button" shadow="true" />
-        </div>
+        <MainForm />
     );
 }

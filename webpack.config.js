@@ -69,7 +69,7 @@ module.exports = {
         contentBase: paths.public,
         compress: true,
         historyApiFallback: true,
-        port: 5000,
+        port: 5001,
         writeToDisk: true,
     },
     plugins: [

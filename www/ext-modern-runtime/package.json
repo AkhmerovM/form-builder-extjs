@@ -1,0 +1,49 @@
+{
+  "_from": "@sencha/ext-modern-runtime",
+  "_id": "@sencha/ext-modern-runtime@7.2.3",
+  "_inBundle": false,
+  "_integrity": "sha512-X2uKTZa7GdS5t87yeaCn9ivawtu1+iAXRY2NG1MN+g2R4sAuocFec1kdcQWx/1g74bgKULgoyFkGZ37LnNaiMw==",
+  "_location": "/@sencha/ext-modern-runtime",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "tag",
+    "registry": true,
+    "raw": "@sencha/ext-modern-runtime",
+    "name": "@sencha/ext-modern-runtime",
+    "escapedName": "@sencha%2fext-modern-runtime",
+    "scope": "@sencha",
+    "rawSpec": "",
+    "saveSpec": null,
+    "fetchSpec": "latest"
+  },
+  "_requiredBy": [
+    "#USER",
+    "/"
+  ],
+  "_resolved": "https://registry.npmjs.org/@sencha/ext-modern-runtime/-/ext-modern-runtime-7.2.3.tgz",
+  "_shasum": "f2441faacff40a7a7a6fe656c5c97257cd2710c0",
+  "_spec": "@sencha/ext-modern-runtime",
+  "_where": "/home/maxim/files/git/work/my-app",
+  "author": {
+    "name": "Sencha"
+  },
+  "bugs": {
+    "url": "https://github.com/sencha/ext-web-components/issues"
+  },
+  "bundleDependencies": false,
+  "dependencies": {},
+  "deprecated": false,
+  "devDependencies": {},
+  "homepage": "https://github.com/sencha/ext-web-components#readme",
+  "keywords": [],
+  "license": "ISC",
+  "name": "@sencha/ext-modern-runtime",
+  "peerDependencies": {},
+  "private": false,
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sencha/ext-web-components.git"
+  },
+  "scripts": {},
+  "version": "7.2.3"
+}

@@ -6,17 +6,28 @@
   flex: 1;
   flex-direction: column;
 }
+.configContainerContent {
+  position: relative;
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+}
 .configContainerSubmit {
-  margin-top: 40px;
   text-align: right;
+  position: absolute;
+  bottom: 0;
+  right: 0;
 }
 .configContainerTextArea {
   border: 1px solid @cBlack;
   width: 100%;
   flex: 1;
+  min-height: 300px;
   resize: none;
   outline: none;
 }
 .configContainerError {
   color: @cRed;
+  margin-top: 20px;
+  min-height: 32px;
 }

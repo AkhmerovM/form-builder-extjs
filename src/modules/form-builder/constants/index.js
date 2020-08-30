@@ -13,12 +13,12 @@ export const COMPONENTS = {
 export const INITIAL_CONFIG_JSON = '{\n'
     + '  items: [\n'
     + "    { type: 'checkBox', boxLabel: 'checkBox' }, \n"
-    + "    { type: 'checkBox', boxLabel: 'disabled', disabled: true }, \n"
     + "    { type: 'number', label: 'Enter number' }, \n"
     + "    { type: 'date', label: 'Enter date' }, \n"
-    + "    { type: 'radio', boxLabel: 'radio' }, \n"
+    + "    { type: 'radio', boxLabel: 'disabled radio',  disabled: true }, \n"
     + "    { type: 'text', label: 'Enter text' }, \n"
-    + "    { type: 'textArea', label: 'Enter text', placeholder: 'something' }\n"
+    + "    { type: 'textArea', label: 'Enter text', placeholder: 'something' }, \n"
+    + "    { type: 'checkBox', boxLabel: 'disabled checkbox', disabled: true } \n"
     + '  ], \n'
     + "  title: 'formName', \n"
     + "  buttons: { save: { text: 'Save' }, cancel: { text: 'Cancel' }}\n"

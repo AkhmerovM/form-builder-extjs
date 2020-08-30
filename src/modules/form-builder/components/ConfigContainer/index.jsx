@@ -7,11 +7,28 @@ import { schema, INITIAL_CONFIG_JSON } from 'modules/form-builder/constants';
 import styles from './style.local.less';
 
 const ajv = new Ajv({ $data: true });
+
 type TProps = {
     handleSuccessParseJson: () => void,
 }
 
 export function ConfigContainer({ handleSuccessParseJson }): TProps {
+    function beautifyErrors(errors) {
+        return errors.map((error, i) => (
+            <div key={i}>
+                Error#
+                {i}
+                <div>
+                    <span>position: </span>
+                    <span>{error.dataPath}</span>
+                </div>
+                <div>
+                    <span>message: </span>
+                    <span>{error.message}</span>
+                </div>
+            </div>
+        ));
+    }
     const textAreaRef = useRef();
     const initialConfig = localStorage.getItem('configJson') || INITIAL_CONFIG_JSON;
     const [configJson, setConfigJson] = useState(initialConfig);
@@ -22,12 +39,15 @@ export function ConfigContainer({ handleSuccessParseJson }): TProps {
             const parsedToJsonValue = JSON5.parse(value);
             const valid = ajv.validate(schema, parsedToJsonValue);
             if (!valid) {
-                setError(ajv.errors[0].message);
+                console.warn('SchemaError', ajv.errors);
+                setError(beautifyErrors(ajv.errors));
             } else {
                 handleSuccessParseJson(parsedToJsonValue);
             }
         } catch (e) {
-            setError(e.message);
+            const parseError = e.message;
+            console.warn('JSONParseError', parseError);
+            setError(parseError);
         }
     }, []);
     const handleChangeTextArea = useCallback((e) => {
@@ -38,9 +58,11 @@ export function ConfigContainer({ handleSuccessParseJson }): TProps {
     }, []);
     return (
         <div className={styles.configContainer}>
-            <textarea ref={textAreaRef} onChange={handleChangeTextArea} value={configJson} className={styles.configContainerTextArea} />
-            <div className={styles.configContainerSubmit}>
-                <ExtButton disabled={error} handler={handleValidateJson} text="Apply" shadow="true" />
+            <div className={styles.configContainerContent}>
+                <textarea ref={textAreaRef} onChange={handleChangeTextArea} value={configJson} className={styles.configContainerTextArea} />
+                <div className={styles.configContainerSubmit}>
+                    <ExtButton disabled={error} handler={handleValidateJson} text="Apply" shadow="true" />
+                </div>
                 <div className={styles.configContainerError}>
                     {error}
                 </div>

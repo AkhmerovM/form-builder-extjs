@@ -1,5 +1,5 @@
 // @flow
-import React, { useCallback } from 'react';
+import React from 'react';
 import cn from 'classnames';
 import styles from './style.local.less';
 
@@ -15,11 +15,8 @@ export function TabButton(props): TProps {
         title, onClick, activeTab, name,
     } = props;
     const isActive = activeTab === name;
-    const handleKeyDown = useCallback((e) => {
-        console.log(e.keyCode);
-    }, []);
     return (
-        <div onClick={onClick} onKeyDown={handleKeyDown} tabIndex="0" role="button" className={cn(styles.tabButton, { [styles.active]: isActive })}>
+        <div onClick={onClick} tabIndex="0" role="button" className={cn(styles.tabButton, { [styles.active]: isActive })}>
             {title}
         </div>
     );

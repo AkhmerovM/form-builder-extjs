@@ -1,4 +1,3 @@
-// @flow
 import { ExtButton } from '@sencha/ext-react-modern';
 import React, { useCallback, useRef, useState } from 'react';
 import Ajv from 'ajv';
@@ -8,11 +7,7 @@ import styles from './style.local.less';
 
 const ajv = new Ajv({ $data: true });
 
-type TProps = {
-    handleSuccessParseJson: () => void,
-}
-
-export function ConfigContainer({ handleSuccessParseJson }): TProps {
+export function ConfigContainer({ handleSuccessParseJson }) {
     function beautifyErrors(errors) {
         return errors.map((error, i) => (
             <div key={i}>
@@ -29,25 +24,27 @@ export function ConfigContainer({ handleSuccessParseJson }): TProps {
             </div>
         ));
     }
-    const textAreaRef = useRef();
+    const textAreaRef = useRef(null);
     const initialConfig = localStorage.getItem('configJson') || INITIAL_CONFIG_JSON;
     const [configJson, setConfigJson] = useState(initialConfig);
     const [error, setError] = useState(false);
     const handleValidateJson = useCallback(() => {
-        const { value } = textAreaRef.current;
-        try {
-            const parsedToJsonValue = JSON5.parse(value);
-            const valid = ajv.validate(schema, parsedToJsonValue);
-            if (!valid) {
-                console.warn('SchemaError', ajv.errors);
-                setError(beautifyErrors(ajv.errors));
-            } else {
-                handleSuccessParseJson(parsedToJsonValue);
+        if (textAreaRef.current && textAreaRef.current.value) {
+            const { value } = textAreaRef.current;
+            try {
+                const parsedToJsonValue = JSON5.parse(value);
+                const valid = ajv.validate(schema, parsedToJsonValue);
+                if (!valid) {
+                    console.warn('SchemaError', ajv.errors);
+                    setError(beautifyErrors(ajv.errors));
+                } else {
+                    handleSuccessParseJson(parsedToJsonValue);
+                }
+            } catch (e) {
+                const parseError = e.message;
+                console.warn('JSONParseError', parseError);
+                setError(parseError);
             }
-        } catch (e) {
-            const parseError = e.message;
-            console.warn('JSONParseError', parseError);
-            setError(parseError);
         }
     }, []);
     const handleChangeTextArea = useCallback((e) => {

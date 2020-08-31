@@ -1,16 +1,8 @@
-// @flow
 import React from 'react';
 import cn from 'classnames';
 import styles from './style.local.less';
 
-type TProps = {
-    activeTab: 'result' | 'configJson',
-    onClick: () => void,
-    disabled?: boolean,
-    title: string,
-    name: string,
-};
-export function TabButton(props): TProps {
+export function TabButton(props) {
     const {
         title, onClick, activeTab, name,
     } = props;

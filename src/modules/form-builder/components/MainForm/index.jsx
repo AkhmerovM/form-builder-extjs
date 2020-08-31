@@ -1,4 +1,3 @@
-// @flow
 import React, { useState, useCallback } from 'react';
 import { ConfigContainer } from 'modules/form-builder/components/ConfigContainer';
 import { ResultContainer } from 'modules/form-builder/components/ResultContainer';

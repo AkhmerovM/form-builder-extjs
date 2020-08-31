@@ -32,7 +32,7 @@ Basic config
 ### Used components
 | Components | Attributes |
 | ------ | ------ |
-| numberField | 'number', label: 'Enter number' |
+| numberField | type: 'number', label: 'Enter number' |
 | textField | type: 'text', label: 'Enter text' |
 | checkBox | type: 'checkBox', boxLabel: 'checkBox', checked: true, disabled: true |
 | textArea | type: 'textArea', label: 'Enter text', placeholder: 'something' |

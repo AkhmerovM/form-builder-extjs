@@ -6,7 +6,6 @@
   "scripts": {
     "dev": "webpack-dev-server --mode=development",
     "build": "webpack-dev-server --mode=production",
-    "flow": "flow",
     "eslint": "eslint --fix /src"
   },
   "repository": {
@@ -23,7 +22,6 @@
     "@babel/core": "^7.11.4",
     "@babel/plugin-proposal-class-properties": "^7.10.4",
     "@babel/preset-env": "^7.11.0",
-    "@babel/preset-flow": "^7.10.4",
     "@babel/preset-react": "^7.10.4",
     "autoprefixer": "^9.8.6",
     "babel-eslint": "^10.1.0",
@@ -33,12 +31,10 @@
     "cssnano": "^4.1.10",
     "eslint": "^7.7.0",
     "eslint-config-airbnb": "^18.2.0",
-    "eslint-plugin-flowtype": "^5.2.0",
     "eslint-plugin-import": "^2.22.0",
     "eslint-plugin-jsx-a11y": "^6.3.1",
     "eslint-plugin-react": "^7.20.6",
     "eslint-plugin-react-hooks": "^4.1.0",
-    "flow-bin": "^0.132.0",
     "html-webpack-plugin": "^4.3.0",
     "less": "^3.12.2",
     "less-loader": "^7.0.0",

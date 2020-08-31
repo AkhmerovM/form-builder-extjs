@@ -1,4 +1,3 @@
-// @flow
 import React from 'react';
 import { MainForm } from 'modules/form-builder/components/MainForm';
 

@@ -5,7 +5,6 @@ import { ResultContainer } from 'modules/form-builder/components/ResultContainer
 import { TabContainer } from 'modules/common/components/TabContainer';
 import { TabButton } from 'modules/common/components/TabButton';
 import { TAB_CONFIG, TAB_RESULT } from 'modules/form-builder/constants';
-import { TabContext } from 'modules/form-builder/context';
 import styles from './style.local.less';
 
 export function MainForm() {
@@ -22,17 +21,15 @@ export function MainForm() {
         setConfigJson(config);
     }, []);
     return (
-        <TabContext.Provider value={activeTab}>
-            <div className={styles.mainForm}>
-                <div className={styles.mainFormButtons}>
-                    <TabButton name={TAB_CONFIG} activeTab={activeTab} onClick={handleSetActiveTabJson} title="Config" />
-                    <TabButton name={TAB_RESULT} activeTab={activeTab} onClick={handleSetActiveTabResult} title="Result" />
-                </div>
-                <div className={styles.mainFormRedactor}>
-                    <TabContainer handleSuccessParseJson={handleSuccessParseJson} activeTab={activeTab} name={TAB_CONFIG} component={ConfigContainer} />
-                    <TabContainer configJson={configJson} activeTab={activeTab} name={TAB_RESULT} component={ResultContainer} />
-                </div>
+        <div className={styles.mainForm}>
+            <div className={styles.mainFormButtons}>
+                <TabButton name={TAB_CONFIG} activeTab={activeTab} onClick={handleSetActiveTabJson} title="Config" />
+                <TabButton name={TAB_RESULT} activeTab={activeTab} onClick={handleSetActiveTabResult} title="Result" />
             </div>
-        </TabContext.Provider>
+            <div className={styles.mainFormRedactor}>
+                <TabContainer handleSuccessParseJson={handleSuccessParseJson} activeTab={activeTab} name={TAB_CONFIG} component={ConfigContainer} />
+                <TabContainer configJson={configJson} activeTab={activeTab} name={TAB_RESULT} component={ResultContainer} />
+            </div>
+        </div>
     );
 }

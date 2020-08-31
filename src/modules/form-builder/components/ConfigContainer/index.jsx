@@ -61,7 +61,7 @@ export function ConfigContainer({ handleSuccessParseJson }): TProps {
             <div className={styles.configContainerContent}>
                 <textarea ref={textAreaRef} onChange={handleChangeTextArea} value={configJson} className={styles.configContainerTextArea} />
                 <div className={styles.configContainerSubmit}>
-                    <ExtButton disabled={error} handler={handleValidateJson} text="Apply" shadow="true" />
+                    <ExtButton disabled={error} ui="action" handler={handleValidateJson} text="Apply" shadow="true" />
                 </div>
                 <div className={styles.configContainerError}>
                     {error}

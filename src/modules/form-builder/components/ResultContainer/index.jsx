@@ -9,7 +9,7 @@ type TProps = {
 
 export function ResultContainer({ configJson }): TProps {
     if (!configJson) {
-        return 'error';
+        return null;
     }
     const formItems = createFormElementsFromJson(configJson);
     return (

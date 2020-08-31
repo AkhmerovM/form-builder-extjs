@@ -1,3 +1,7 @@
+import {
+    ExtCheckboxfield, ExtDatepickerfield, ExtNumberfield, ExtRadiofield, ExtTextareafield, ExtTextfield,
+} from '@sencha/ext-react-modern';
+
 export const TAB_CONFIG = 'configJson';
 export const TAB_RESULT = 'result';
 
@@ -10,6 +14,14 @@ export const COMPONENTS = {
     radio: 'radio',
 };
 
+export const CONFIG_COMPONENTS = {
+    [COMPONENTS.checkBox]: ExtCheckboxfield,
+    [COMPONENTS.radio]: ExtRadiofield,
+    [COMPONENTS.text]: ExtTextfield,
+    [COMPONENTS.date]: ExtDatepickerfield,
+    [COMPONENTS.number]: ExtNumberfield,
+    [COMPONENTS.textArea]: ExtTextareafield,
+};
 export const INITIAL_CONFIG_JSON = '{\n'
     + '  items: [\n'
     + "    { type: 'checkBox', boxLabel: 'checkBox' }, \n"
